@@ -9,9 +9,9 @@ public class EasyNim {
 
         // Set up the game with initial piles and objects
         Stack<Integer>[] piles = new Stack[3];
-        piles[0] = new Stack<>();
         piles[1] = new Stack<>();
         piles[2] = new Stack<>();
+        piles[3] = new Stack<>();
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3 + 2 * i; j++) {
