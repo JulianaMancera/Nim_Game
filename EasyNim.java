@@ -7,14 +7,14 @@ public class EasyNim {
 
         Scanner scanner = new Scanner(System.in);
 
-        // Set up the game with initial piles and objects
-        Stack<Integer>[] piles = new Stack[3];
-        piles[0] = new Stack<>();
+        
+        Stack<Integer>[] piles = new Stack[4]; 
         piles[1] = new Stack<>();
         piles[2] = new Stack<>();
+        piles[3] = new Stack<>();
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3 + 2 * i; j++) {
+        for (int i = 1; i <= 3; i++) { 
+            for (int j = 0; j < 3 + 2 * (i - 1); j++) { 
                 piles[i].push(1); // Each object represented by '1'
             }
         }
@@ -29,7 +29,7 @@ public class EasyNim {
 
             // Check if the game is over
             if (isGameOver(piles)) {
-                System.out.println("Congratulations! Player 1 won!");
+                System.out.println("Congratulations, Player 1 won!");
                 break;
             }
 
@@ -41,7 +41,7 @@ public class EasyNim {
 
             // Check if the game is over
             if (isGameOver(piles)) {
-                System.out.println("Congratulations! Player 2 won!");
+                System.out.println("Congratulations, Player 2 won!");
                 break;
             }
         }
@@ -51,7 +51,7 @@ public class EasyNim {
     // Method to display current state of the piles
     private static void displayPiles(Stack<Integer>[] piles) {
         System.out.println("Current piles: ");
-        for (int i = 0; i < piles.length; i++) {
+        for (int i = 1; i <= 3; i++) { // Start from 1
             System.out.println("Pile " + i + ": " + piles[i].size() + "  ");
         }
         System.out.println();
@@ -61,9 +61,9 @@ public class EasyNim {
     private static void playerTurn(int player, Stack<Integer>[] piles, Scanner scanner) {
         System.out.println("Player " + player + "'s turn:");
         while (true) {
-            System.out.print("Choose a pile to remove objects (0, 1, or 2): ");
+            System.out.print("Choose a pile to remove objects (1, 2, or 3): ");
             int pileIndex = scanner.nextInt();
-            if (pileIndex < 0 || pileIndex >= piles.length || piles[pileIndex].isEmpty()) {
+            if (pileIndex < 1 || pileIndex > 3 || piles[pileIndex].isEmpty()) { // Adjust bounds
                 System.out.println("Invalid pile. Try again.");
                 continue;
             }
@@ -85,8 +85,8 @@ public class EasyNim {
 
     // Method to check if the game is over
     private static boolean isGameOver(Stack<Integer>[] piles) {
-        for (Stack<Integer> pile : piles) {
-            if (!pile.isEmpty()) {
+        for (int i = 1; i <= 3; i++) { // Start from 1
+            if (!piles[i].isEmpty()) {
                 return false;
             }
         }
