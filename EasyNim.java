@@ -50,9 +50,9 @@ public class EasyNim {
 
     // Method to display current state of the piles
     private static void displayPiles(Stack<Integer>[] piles) {
-        System.out.print("Current piles: ");
+        System.out.println("Current piles: ");
         for (int i = 0; i < piles.length; i++) {
-            System.out.print("Pile " + i + ": " + piles[i].size() + "  ");
+            System.out.println("Pile " + i + ": " + piles[i].size() + "  ");
         }
         System.out.println();
     }
