@@ -1,6 +1,5 @@
 import java.util.*;
-// HI GUYS so here instead of 10 , 7 piles nlng na may elements each 1,3,5,7,9,11,13 na sya
-// so revised na itechhhh
+// 7 piles: elements each 1,3,5,7,9,11,13 na sya
 
 public class HardNim {
     public static void main(String[] args) {
