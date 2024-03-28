@@ -3,7 +3,7 @@ import java.util.Stack;
 
 public class EasyNim {
     public static void main(String[] args) {
-        System.out.println("Welcome to Easy Mode Nim!");
+        System.out.println("\nWelcome to Easy Mode Nim!");
 
         Scanner scanner = new Scanner(System.in);
 
