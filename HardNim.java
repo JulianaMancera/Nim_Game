@@ -4,7 +4,7 @@ import java.util.*;
 public class HardNim {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("You are playing Hard Mode! You have 7 piles all in all!");
+        System.out.println("\nYou are playing Hard Mode! You have 7 piles all in all!");
 
         // Initializing piles
         @SuppressWarnings("unchecked")
